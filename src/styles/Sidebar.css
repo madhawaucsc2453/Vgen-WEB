@@ -1,0 +1,10 @@
+.sidebar{
+    width: 7vw;;
+    height: 100vh;
+    background-color: tomato;
+    align-content: space-between;
+}
+.menuItem{
+    width: 100%;
+    background-color: blue;
+}
