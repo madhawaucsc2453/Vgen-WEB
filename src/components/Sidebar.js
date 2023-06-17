@@ -5,7 +5,7 @@ export default function Sidebar() {
     <div className='sidebar'>
       <div className='menuItem'>Home</div>
       <div className='menuItem'>Categories</div>
-      <div className='menuItem'>Settings</div>
+      <div className='menuItem'>Setting</div>
     </div>
   )
 }
