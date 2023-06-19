@@ -1,5 +1,9 @@
-.container{
+.outerContainer{
+  display: flex;
+  flex-direction: row;
+}.container{
+  
   width: 100vw;
   height: 100vh;
-  background-color: dodgerblue;
+  background-color: white;
 }

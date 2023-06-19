@@ -8,6 +8,6 @@ export default function Button() {
     };
 
     return (
-        <button onClick={() => increaseCounter()}>Increment</button>
+        <button onClick={() => increaseCounter()} >Increment</button>
     )
 }
