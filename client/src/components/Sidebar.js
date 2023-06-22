@@ -1,0 +1,48 @@
+import React, { useEffect, useState } from 'react'
+import MenuItem from './MenuItem';
+import '../styles/Sidebar.css'
+import HomeIcon from '@mui/icons-material/Home';
+import StoreIcon from '@mui/icons-material/Store';
+import WindowIcon from '@mui/icons-material/Window';
+import DynamicFeedIcon from '@mui/icons-material/DynamicFeed';
+import PeopleIcon from '@mui/icons-material/People';
+import AddHomeIcon from '@mui/icons-material/AddHome';
+import { useNavigate } from 'react-router-dom';
+export default function Sidebar() {
+  const navigate = useNavigate();
+  const [role, setRole] = useState("delivery");
+  /*useEffect(() => {
+    navigate('/order');
+  })*/
+  const customer = [
+    { id: 1, icon: <HomeIcon sx={{ fontSize: 40, fill: "#6F767F" }} />, index: "1" },
+    { id: 2, icon: <WindowIcon sx={{ fontSize: 40, fill: "#6F767F" }} />, index: "2" },
+    { id: 3, icon: <StoreIcon sx={{ fontSize: 40, fill: "#6F767F" }} />, index: "3" },
+    { id: 4, icon: <PeopleIcon sx={{ fontSize: 40, fill: "#6F767F" }} />, index: "4" },
+    { id: 5, icon: <DynamicFeedIcon sx={{ fontSize: 40, fill: "#6F767F" }} />, index: "5" },
+    { id: 6, icon: <AddHomeIcon sx={{ fontSize: 40, fill: "#6F767F" }} />, index: "6" },
+  ];
+  const manager = [
+    { id: 1, icon: <HomeIcon sx={{ fontSize: 40, fill: "#6F767F" }} />, link: "home", index: "1" },
+    { id: 2, icon: <WindowIcon sx={{ fontSize: 40, fill: "#6F767F" }} />, link: "order", index: "2" },
+  ];
+  const navigateTo = (page) => {
+    if (page == "home") {
+      navigate('');
+    } else {
+      navigate('/' + page);
+    }
+  }
+  return (
+    <div className='sidebar' onSelect={(item) => console.log(item)}>
+      <div>
+        {role == "customer" ? customer.map((item) => (
+          <MenuItem key={item.id} icon={item.icon} fun={navigateTo} link={item.link} index={item.index} />
+        )) : manager.map((item) => (
+          <MenuItem key={item.id} icon={item.icon} fun={navigateTo} link={item.link} index={item.index} />
+        ))}
+      </div>
+
+    </div>
+  )
+}

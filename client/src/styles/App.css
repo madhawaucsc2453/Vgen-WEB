@@ -1,0 +1,12 @@
+.outerContainer{
+  display: flex;
+  flex-direction: row;
+}.container{ 
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+.outerContainer{
+  outline: 10px solid #FB9300;
+  box-sizing: border-box;
+}
