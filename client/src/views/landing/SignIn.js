@@ -8,14 +8,14 @@ export default function SignIn() {
     const dispatch = useDispatch();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    var user = useSelector(state => state.SetUserReducer.user)
+    var user = localStorage.getItem('type')
     const navigate = useNavigate();
     useEffect(()=>{
-        if(user!="null"){
-          navigate('/home');
+        if(user){
+            navigate('/home');
         }
         //console.log("Landing");
-      })
+      },[])
     const navigateTo = (page) => {
         if (page == "home") {
             navigate('');
@@ -34,7 +34,7 @@ export default function SignIn() {
             if(response.data!="err"){
                 console.log("sadasd");
                 dispatch(SetUserAction(response.data));
-                console.log(user)
+                navigate('/home');
                 //window.location.reload(true);
             }
             //console.log(response.data);
