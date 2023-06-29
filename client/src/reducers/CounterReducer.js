@@ -1,5 +1,4 @@
 import { INCREMENT_COUNTER } from "../constants/ActionTypes";
-import Axios from 'axios';
 const initialState = {
     counter: 18,
     count: 6

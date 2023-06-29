@@ -1,14 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import '../../styles/SignUp.css'
 import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import Axios from 'axios';
 export default function SignUp() {
+  var user = useSelector(state => state.SetUserReducer.user)
   const [role, setRole] = useState('customer');
   const [name,setName] = useState('');
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
   const [confirmpassword,setConfirmPassword] = useState('');
   const navigate = useNavigate();
+  useEffect(()=>{
+    if(user!="null"){
+      navigate('/home');
+    }
+    //console.log("Landing");
+  })
   const navigateTo = (page) => {
     if (page == "home") {
       navigate('');

@@ -45,7 +45,18 @@
   justify-content: center;
   align-items: center;
 }
-.formInput > input{
+.signInForm{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+  width: 100%;
+  justify-content: center;
+  align-items:center;
+}
+.signInForm > input{
   border: 0;
   border-bottom: 3px solid #bbb;
   width: 80%;
@@ -65,7 +76,7 @@ input:focus{
   pointer-events: none;
   position: relative;
   top: -32px;
-  left: -140px;
+  left: -145px;
   transition: all 0.5s ease;
 }
 input:focus,input:valid{

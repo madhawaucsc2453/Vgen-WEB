@@ -42,6 +42,26 @@ app.post("/api/registeruser", (req, res) => {
   });
   //res.send(email)
 })
+app.post("/api/signinuser", (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password;
+  //res.status(200).json({elements: resultElements}); // send a json response
+  //const review = req.body.review;
+  const selectQuery ='SELECT password,type from users WHERE email="'+email+'"';
+  //const insertSql = 'INSERT INTO users(email,password) VALUES("'+email+'","'+password+'")';
+  //const updateSql = "UPDATE user SET name=" + name + " WHERE id = 35";
+  db.query(selectQuery, (err, result) => {
+    if(!err){
+      if(result[0].password==email){
+        //console.log(result[0].type)
+        res.send(result[0].type);
+      }
+    }else{
+      console.log(err);
+    }
+  });
+  //res.send(email)
+})
 app.get('/api/data', (req, res) => {
   //const  value  = req.body; // Assuming the textbox value is sent in the request body
 

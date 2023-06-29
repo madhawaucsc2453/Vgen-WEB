@@ -9,8 +9,9 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={Store}>
+    <BrowserRouter>
       <App />
-
+    </BrowserRouter>
   </Provider>
 );
 reportWebVitals();

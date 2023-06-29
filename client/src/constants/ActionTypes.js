@@ -1,2 +1,3 @@
 export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
 export const INCREASE_VALUE='INCREASE_VALUE';
+export const SET_USER='SET_USER';
