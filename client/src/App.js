@@ -41,14 +41,14 @@ function App() {
   const val = useSelector(state => state.ValueReducer.value)
   console.log(user)
   const customerRoutes = [
-    { id: 1, path: '/home', element: <Dashboard /> },
+    { id: 1, path: '/home', element: <Home /> },
     { id: 2, path: '/category', element: <Categories /> },
     { id: 3, path: '/community', element: <Community /> },
     { id: 4, path: '/feed', element: <Feed /> },
     { id: 5, path: '/restaurants', element: <Restaurants /> },
   ];
   const deliveryRoutes = [
-    { id: 1, path: '/home', element: <Dashboard /> },
+    { id: 1, path: '/home', element: <DeliveryHome /> },
     { id: 2, path: '/order', element: <DeliveryOrder /> },
   ];
   const guestRoutes = [];
