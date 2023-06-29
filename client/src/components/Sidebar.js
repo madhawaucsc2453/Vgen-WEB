@@ -7,6 +7,7 @@ import WindowIcon from '@mui/icons-material/Window';
 import DynamicFeedIcon from '@mui/icons-material/DynamicFeed';
 import PeopleIcon from '@mui/icons-material/People';
 import AddHomeIcon from '@mui/icons-material/AddHome';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 export default function Sidebar() {
@@ -22,12 +23,16 @@ export default function Sidebar() {
     { id: 3, icon: <StoreIcon sx={{ fontSize: 40, fill: "#6F767F" }} />,link: "restaurants" , index: "3" },
     { id: 4, icon: <PeopleIcon sx={{ fontSize: 40, fill: "#6F767F" }} />,link: "community" , index: "4" },
     { id: 5, icon: <DynamicFeedIcon sx={{ fontSize: 40, fill: "#6F767F" }} />,link: "feed" , index: "5" },
+    { id: 6, icon: <AccountCircleIcon sx={{ fontSize: 40, fill: "#6F767F" }} />,link: "logout" , index: "5" },
   ];
   const manager = [
     { id: 1, icon: <HomeIcon sx={{ fontSize: 40, fill: "#6F767F" }} />, link: "home", index: "1" },
     { id: 2, icon: <WindowIcon sx={{ fontSize: 40, fill: "#6F767F" }} />, link: "order", index: "2" },
   ];
   const navigateTo = (page) => {
+    if(page=="logout"){
+      localStorage.clear("type");
+    }
     navigate('/' + page);
   }
   return (
