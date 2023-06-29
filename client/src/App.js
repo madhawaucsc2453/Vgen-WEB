@@ -40,6 +40,7 @@ function App() {
   const number = useSelector(state => state.CounterReducer.counter);
   const val = useSelector(state => state.ValueReducer.value)
  const name =["madhawa"];
+ const age=[23];
   const customerRoutes = [
     { id: 1, path: '/home', element: <Dashboard /> },
     { id: 2, path: '/category', element: <Categories /> },
