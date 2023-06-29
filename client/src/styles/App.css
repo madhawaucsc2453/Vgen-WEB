@@ -1,3 +1,15 @@
+@font-face {
+  font-family: luckiest-guy;
+  src: url("../assets/fonts/LuckiestGuy-Regular.ttf");
+}
+@font-face {
+  font-family: rammetto-one;
+  src: url("../assets/fonts/RammettoOne-Regular.ttf");
+}
+@font-face {
+  font-family: poppins-regular;
+  src: url("../assets/fonts/Poppins-Regular.ttf");
+}
 .outerContainer{
   display: flex;
   flex-direction: row;
@@ -7,6 +19,14 @@
   background-color: white;
 }
 .outerContainer{
-  outline: 10px solid #FB9300;
   box-sizing: border-box;
+}
+div{
+  user-select: none;
+}
+.buttonFillInside:hover{
+  cursor: pointer;
+}
+.buttonFillBorder:hover{
+  cursor: pointer;
 }

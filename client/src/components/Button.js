@@ -1,13 +1,8 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { IncrementCounterAction } from '../actions/IncrementCounterAction'
-export default function Button() {
-    const dispatch = useDispatch();
-    const increaseCounter = () => {
-        dispatch(IncrementCounterAction());
-    };
-
+export default function Button(props) {
     return (
-        <button onClick={() => increaseCounter()} >Increment</button>
+        <button onClick={props.fun} >Increment</button>
     )
 }
