@@ -24,10 +24,6 @@ import Dashboard from './views/Dashboard';
 function App() {
   const navigate = useNavigate();
   var user = localStorage.getItem('type')
-  window.onunload = () => {
-    // Clear the local storage
-    window.sessionStorage.clear('type')
- }
   useEffect(()=>{
     if(user){
       navigate('/home');

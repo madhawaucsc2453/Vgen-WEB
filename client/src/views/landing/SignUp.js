@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Axios from 'axios';
 export default function SignUp() {
-  var user = useSelector(state => state.SetUserReducer.user)
+  var user = localStorage.getItem('type')
   const [role, setRole] = useState('customer');
   const [name,setName] = useState('');
   const [email,setEmail] = useState('');
@@ -12,7 +12,7 @@ export default function SignUp() {
   const [confirmpassword,setConfirmPassword] = useState('');
   const navigate = useNavigate();
   useEffect(()=>{
-    if(user!="null"){
+    if(user){
       navigate('/home');
     }
     //console.log("Landing");
