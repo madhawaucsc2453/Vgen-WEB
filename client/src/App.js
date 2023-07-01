@@ -22,6 +22,7 @@ import SignUp from './views/landing/SignUp';
 import ProtectedRoutes from './utils/ProtectedRoutes';
 import Dashboard from './views/Dashboard';
 function App() {
+  //localStorage.clear('type');
   const navigate = useNavigate();
   var user = localStorage.getItem('type')
   useEffect(()=>{
