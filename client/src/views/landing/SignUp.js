@@ -2,7 +2,8 @@ import React, { useState,useEffect } from 'react'
 import '../../styles/SignUp.css'
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import Axios from 'axios';
+import Axios from '../../api/Axios';
+import * as API_ENDPOINTS from '../../api/ApiEndpoints';
 export default function SignUp() {
   var user = localStorage.getItem('type')
   const [role, setRole] = useState('customer');
@@ -25,7 +26,7 @@ export default function SignUp() {
     }
   }
   const handleSubmit =(e)=>{
-    Axios.post("http://localhost:5001/api/registeruser", {
+    Axios.post(API_ENDPOINTS.SIGNUP_URL, {
       email: email,
       password: password,
     }).then((response) => {
