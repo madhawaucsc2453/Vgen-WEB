@@ -32,7 +32,7 @@ export default function SignUp() {
       /*Axios.get("http://localhost:5000/api/get").then((response) => {
         console.log("helo");
       });*/
-      console.log(response.data);
+      navigate('/');
     });
    //e.preventDefault();
     //console.log(e.target[0].value);
