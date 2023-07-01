@@ -1,9 +1,11 @@
 import React, { useState,useEffect } from 'react'
 import '../../styles/SignIn.css'
-import { useNavigate } from 'react-router-dom';
+import { json, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { SetUserAction } from '../../actions/SetUserAction';
-import Axios from 'axios';
+import Axios from '../../api/Axios';
+import * as API_ENDPOINTS from '../../api/ApiEndpoints';
+//import Axios from 'axios';
 export default function SignIn() {
     const dispatch = useDispatch();
     const [email, setEmail] = useState('');
@@ -24,18 +26,22 @@ export default function SignIn() {
         }
     }
     const handleSubmit = (e) => {
-        Axios.post("http://localhost:5001/api/signinuser", {
+        Axios.post(API_ENDPOINTS.SIGNIN_URL, {
             email: email,
             password: password,
         }).then((response) => {
             /*Axios.get("http://localhost:5000/api/get").then((response) => {
               console.log("helo");
             });*/
-            if(response.data!="err"){
-                console.log("sadasd");
-                dispatch(SetUserAction(response.data));
+            if(response.data.type){
+                //console.log(response.data.type)
+                //console.log(JSON.parse(atob(response.data.split('.')[1])));
+                dispatch(SetUserAction(response.data.type));
+                localStorage.setItem('token',response.data.token);
                 navigate('/home');
                 //window.location.reload(true);
+            }else{
+                return
             }
             //console.log(response.data);
         });
