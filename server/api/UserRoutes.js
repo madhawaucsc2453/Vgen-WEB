@@ -38,12 +38,20 @@ router.post("/signinuser", (req, res) => {
 router.post("/registeruser", (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
+    const firstName = req.body.firstName;
+    const lastName = req.body.lastName;
+    const street = req.body.street;
+    const city = req.body.city;
+    const homeNo = req.body.homeNo;
+    const age = req.body.age;
+    const userRole = req.body.userRole;
+    // const profilePicture=req.body.profilePicture;
     bcrypt.hash(password, 10, (err, hash) => {
         if (err) {
-            res.send("unsuccessfull");
+            res.send("unsuccessful");
         } else {
-            User.create({ email: email, password: hash });
-            res.send("Successfull");
+            User.create({ email: email, password: hash ,firstName:firstName,lastName:lastName,street:street,city:city,homeNo:homeNo,age:age,userRole:userRole });
+            res.send("Successful");
         }
     });
 })

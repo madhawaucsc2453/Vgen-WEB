@@ -1,7 +1,7 @@
 const { Sequelize,DataTypes } = require('sequelize');
 
 // Create a new Sequelize instance
-const sequelize = new Sequelize('react', 'root', '', {
+const sequelize = new Sequelize('vgen','root',null, {
     host: 'localhost',
     dialect: 'mysql',
     dialectModule: require('mysql2')
