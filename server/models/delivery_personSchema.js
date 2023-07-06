@@ -1,56 +1,52 @@
+
 const { DataTypes } = require('sequelize');
 const sequelize = require('./db');
 
 // Define the User model
-const User = sequelize.define('user',{
-    userId: {
+const deliveryPerson = sequelize.define('delivery_person', {
+deliveryPersonId:{
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
+        foriegnKey:true,
         autoIncrement:true,
+},vehicleType:{
+        type: DataTypes.STRING,
+        allowNull: true
 
-    },
-    homeNo:{
+},latitude:{
         type: DataTypes.STRING,
         allowNull: true
-    },street:{
+},longitude:{
         type: DataTypes.STRING,
         allowNull: true
-    },
-    city:{
+},vehicleNo:{
         type: DataTypes.STRING,
         allowNull: true
-    },
-    age:{
+},accountNo:{
+        type: DataTypes.STRING,
+        allowNull: true
+},maxQuantity:{
         type: DataTypes.INTEGER,
         allowNull: true
-    },password: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    firstName: {
+},availability:{
+        type: DataTypes.TINYINT,
+        allowNull: true
+},licenseNo:{
         type: DataTypes.STRING,
         allowNull: true
-    },lastName: {
+},drivingLicense:{
         type: DataTypes.STRING,
         allowNull: true
-    },
-    email: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    
-    userRole: {
+},vehicleRegistration:{
         type: DataTypes.STRING,
         allowNull: true
+}
     }
-    // },profilePicture:{
-    //     type: DataTypes.STRING,
-    //     allowNull: true
-    // },
-  
-}, {
-   timestamps:false,
+    ,
+
+ {
+    timestamps: false,
 });
 
-module.exports = User;
+module.exports = deliveryPerson;
